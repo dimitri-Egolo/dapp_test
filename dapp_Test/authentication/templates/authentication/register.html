@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Dapp Test</title>
+
+  {% include "authentication/header.html" %}
+</head>
+<body class="red lighten-2">
+    {% include 'authentication/menu.html' %}
+
+    <div class="container">
+      <div class="row">
+          <div class="col s12">
+            <!-- card -->
+            <div class="register-card card">
+              <form>
+                <div class="card-content">
+                  <span class="card-title">Register</span>
+                    <div class="row login-input-row">
+                      <div class="input-field col s12 m6 l6">
+                        <i class="material-icons prefix">account_box</i>
+                        <input id="first_name" type="text" class="validate">
+                        <label for="first_name">First name</label>
+                      </div>
+                      <div class="input-field col s12 m6 l6">
+                        <i class="material-icons prefix">account_box</i>
+                        <input id="last_name" type="text" class="validate">
+                        <label for="last_name">Last name</label>
+                      </div>
+                      <div class="input-field col s12 m6 l6">
+                        <i class="material-icons prefix">email</i>
+                        <input id="email" type="text" class="validate">
+                        <label for="email">Email</label>
+                      </div>
+                      <div class="input-field col s12 m6 l6">
+                        <i class="material-icons prefix">account_box</i>
+                        <input id="username" type="text" class="validate">
+                        <label for="username">Username</label>
+                      </div>
+                      <div class="input-field col s12 m6 l6">
+                        <i class="material-icons prefix">lock</i>
+                        <input id="password" type="text" class="validate">
+                        <label for="password">Password</label>
+                      </div>
+                      <div class="input-field col s12 m6 l6">
+                        <i class="material-icons prefix">verified_user</i>
+                        <input id="confirm_pwd" type="text" class="validate">
+                        <label for="confirm_pwd">Confirm password</label>
+                      </div>
+                      <div class="file-field input-field col s12">
+                        <div class="btn">
+                          <span>Photo</span>
+                          <input type="file">
+                        </div>
+                        <div class="file-path-wrapper">
+                          <input class="file-path validate" type="text">
+                        </div>
+                      </div>
+                      <div class="col s12 conditions-checkbox">
+                        <p>
+                          <label>
+                            <input type="checkbox" />
+                            <span>I accept all the conditions*.</span>
+                          </label>
+                        </p>
+                      </div>
+                    </div>
+                </div>
+
+                <div class="card-action">
+                  <div class="row">
+                    <div class="col s12">
+                      <a href="#" class="btn-small right waves-effect waves-light red lighten-2">Create an account</a>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <!-- endcard -->
+          </div>
+      </div>
+    </div>
+  {% include 'authentication/script.html' %}
+</body>
+</html>
