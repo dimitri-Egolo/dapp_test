@@ -6,63 +6,65 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Dapp Test</title>
 
-  {% include "authentication/header.html" %}
+  {% include "authentication/stylesheet.html" %}
 </head>
 <body class="red lighten-2">
-    {% include 'authentication/menu.html' %}
+    {% include 'authentication/header.html' %}
 
     <div class="container">
       <div class="row">
           <div class="col s12">
             <!-- card -->
             <div class="register-card card">
-              <form>
+              <form id="register_form" action="{% url 'auth:createAccount' %}" method="post">
+                {% csrf_token %}
                 <div class="card-content">
                   <span class="card-title">Register</span>
                     <div class="row login-input-row">
                       <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_box</i>
-                        <input id="first_name" type="text" class="validate">
+                        <input id="first_name" name="first_name" form="register_form" type="text" class="validate">
                         <label for="first_name">First name</label>
                       </div>
                       <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_box</i>
-                        <input id="last_name" type="text" class="validate">
+                        <input id="last_name" name="last_name" form="register_form" type="text" class="validate">
                         <label for="last_name">Last name</label>
                       </div>
                       <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">email</i>
-                        <input id="email" type="text" class="validate">
+                        <input id="email" name="email" form="register_form" type="email" class="validate" required>
                         <label for="email">Email</label>
                       </div>
                       <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_box</i>
-                        <input id="username" type="text" class="validate">
+                        <input id="username" name="username" form="register_form" type="text" class="validate" required>
                         <label for="username">Username</label>
                       </div>
                       <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">lock</i>
-                        <input id="password" type="text" class="validate">
+                        <input id="password" name="password" form="register_form" type="password" class="validate" required>
                         <label for="password">Password</label>
                       </div>
                       <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">verified_user</i>
-                        <input id="confirm_pwd" type="text" class="validate">
+                        <input id="confirm_pwd" name="confirm_pwd" form="register_form" type="password" class="validate" required>
                         <label for="confirm_pwd">Confirm password</label>
+                        <span id='message'></span>
                       </div>
                       <div class="file-field input-field col s12">
                         <div class="btn">
                           <span>Photo</span>
-                          <input type="file">
+                          <input name="photo" form="register_form" type="file">
                         </div>
                         <div class="file-path-wrapper">
-                          <input class="file-path validate" type="text">
+                          <input form="register_form" class="file-path validate" type="text">
                         </div>
                       </div>
                       <div class="col s12 conditions-checkbox">
                         <p>
                           <label>
-                            <input type="checkbox" />
+                            <input form="register_form" type="checkbox" name="conditions" required/>
                             <span>I accept all the conditions*.</span>
                           </label>
                         </p>
@@ -73,7 +75,7 @@
                 <div class="card-action">
                   <div class="row">
                     <div class="col s12">
-                      <a href="#" class="btn-small right waves-effect waves-light red lighten-2">Create an account</a>
+                      <input class="btn-small right waves-effect waves-light red lighten-2" type="submit" value="create an account"/>
                     </div>
                   </div>
                 </div>
@@ -84,5 +86,13 @@
       </div>
     </div>
   {% include 'authentication/script.html' %}
+  <script>
+  $('#password, #confirm_pwd').on('keyup', function () {
+    if ($('#password').val() == $('#confirm_pwd').val()) {
+      $('#message').html('Matching').css('color', 'green');
+    } else
+      $('#message').html('Not Matching').css('color', 'red');
+    });
+  </script>
 </body>
 </html>

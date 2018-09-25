@@ -1,14 +1,29 @@
 {% load static %}
+<ul id="dropdown1" class="dropdown-content">
+  <li><a href="{% url 'auth:detail' user.id %}"><i class="material-icons left">edit</i>Profile</a></li>
+  <li class="divider"></li>
+  <li><a href="{% url 'auth:logout' %}"><i class="material-icons left">exit_to_app</i>logout</a></li>
+</ul>
+<nav class="white" role="navigation">
+  <div class="nav-wrapper container">
+    <a id="logo-container" href="#" class="brand-logo"><img src="{% static 'images/dapplogo.png' %}" alt="logo" style="width: 100px;"></a>
+    {% if user.is_authenticated %}
+      <ul class="right hide-on-med-and-down">
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li>
+          <a class="dropdown-trigger" href="#!" data-target="dropdown1"><i class="material-icons left">account_circle</i>{{ user.username }}<i class="material-icons right">arrow_drop_down</i></a>
+        </li>
+      </ul>
+    {% else %}
+      <ul class="right hide-on-med-and-down">
+        <li><a href="{% url 'auth:authentication' %}">Connexion</a></li>
+      </ul>
 
-<!-- favicon -->
-<link rel="apple-touch-icon" sizes="180x180" href="{% static 'icons/apple-touch-icon.png' %}">
-<link rel="icon" type="image/png" sizes="32x32" href="{% static 'icons/favicon-32x32.png' %}">
-<link rel="icon" type="image/png" sizes="16x16" href="{% static 'icons/favicon-16x16.png' %}">
-<link rel="manifest" href="{% static 'icons/site.webmanifest' %}">
-<link rel="mask-icon" href="{% static 'icons/safari-pinned-tab.svg' %}" color="#5bbad5">
-<meta name="msapplication-TileColor" content="#da532c">
-<meta name="theme-color" content="#ffffff">
-<!-- CSS  -->
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<link href="{% static 'css/materialize.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
-<link href="{% static 'css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="{% url 'auth:authentication' %}">Connexion</a></li>
+      </ul>
+    {% endif %}
+
+    <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+  </div>
+</nav>

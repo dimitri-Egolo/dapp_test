@@ -1,4 +1,4 @@
-from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
+from django.contrib.auth.models import BaseUserManager, AbstractUser
 from django.db import models
 
 
@@ -24,12 +24,14 @@ class UserProfileManager(BaseUserManager):
         userprofile = self.create_user(username, password, **kwargs)
 
         userprofile.is_admin = True
+        userprofile.is_staff = True
+        userprofile.is_superuser = True
         userprofile.save()
 
         return userprofile
 
 
-class UserProfile(AbstractBaseUser):
+class UserProfile(AbstractUser):
     email = models.EmailField(unique=True)
     username = models.CharField(max_length=40, unique=True)
 
