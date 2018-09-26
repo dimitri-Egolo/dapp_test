@@ -14,9 +14,9 @@
     <div class="section">
       <h2 class="center">Update profile</h2>
       <div class="divider"></div>
-      <form id="update_user" action="{% url 'auth:createAccount' %}" method="post">
+      <form id="update_user" action="{% url 'auth:update' user.id %}" method="post">
         {% csrf_token %}
-        <div class="row">
+        <div class="row" style="margin-bottom: 20px;">
           <blockquote>
             <h5><i>General Information</i></h5>
           </blockquote>
@@ -27,17 +27,17 @@
           </div>
           <div class="input-field col s12 m6 l6">
             <i class="material-icons prefix">account_box</i>
-            <input id="last_name" name="last_name" form="update_user" type="text" class="validate">
+            <input id="last_name" name="last_name" form="update_user" type="text" value="{{user.last_name}}" class="validate">
             <label for="last_name">Last name</label>
           </div>
           <div class="input-field col s12 m6 l6">
             <i class="material-icons prefix">email</i>
-            <input id="email" name="email" form="update_user" type="email" class="validate" required>
+            <input id="email" name="email" form="update_user" type="email" value="{{user.email}}" class="validate" required>
             <label for="email">Email</label>
           </div>
           <div class="input-field col s12 m6 l6">
             <i class="material-icons prefix">account_box</i>
-            <input id="username" name="username" form="update_user" type="text" class="validate" required>
+            <input id="username" name="username" form="update_user" type="text" value="{{user.username}}" class="validate" required>
             <label for="username">Username</label>
           </div>
 
@@ -50,22 +50,24 @@
               <input form="update_user" class="file-path validate" type="text">
             </div>
           </div>
+          <div id="change_pwd_checkbox" class="col s12">
+            <label>
+              <input type="checkbox" name="change_pwd" class="filled-in red" form="update_user" onclick="showMe('password_div')"/>
+              <span><i>Change your password</i></span>
+            </label>
+          </div>
         </div>
 
-        <div class="row">
-          <blockquote>
-            <h5><i>Change your password</i></h5>
-          </blockquote>
-
+        <div id="password_div" class="row" style="display: None;">
           <div class="input-field col s12 m6 l6">
             <i class="material-icons prefix">lock</i>
-            <input id="password" name="password" form="update_user" type="password" class="validate" required>
+            <input id="password" name="password" form="update_user" type="password" class="validate">
             <label for="password">Password</label>
           </div>
 
           <div class="input-field col s12 m6 l6">
             <i class="material-icons prefix">verified_user</i>
-            <input id="confirm_pwd" name="confirm_pwd" form="update_user" type="password" class="validate" required>
+            <input id="confirm_pwd" name="confirm_pwd" form="update_user" type="password" class="validate">
             <label for="confirm_pwd">Confirm password</label>
             <span id='message'></span>
           </div>
@@ -73,7 +75,7 @@
 
         <div class="row" style="margin-top: 50px;">
           <div class="col s12">
-            <input class="btn-large right waves-effect waves-light red lighten-2" type="submit" value="Edit your profile"/>
+            <input id="edit" class="btn-large right waves-effect waves-light red lighten-2" type="submit" value="Edit your profile"/>
             <a href="{% url 'home' %}" id="download-button" class="btn-large right waves-effect waves-light black">Cancel</a>
           </div>
         </div>
@@ -84,5 +86,32 @@
   {% include 'authentication/footer.html' %}
 
   {% include 'authentication/script.html' %}
+  <script>
+  $('#password, #confirm_pwd').on('keyup', function () {
+    if ($('#password').val() == $('#confirm_pwd').val()) {
+      $('#message').html('Password Matching').css('color', 'green');
+    } else
+      $('#message').html('Password Not Matching').css('color', 'red');
+    });
+
+    function showMe (box) {
+
+        var chboxs = document.getElementsByName("change_pwd");
+        var vis = "none";
+        for(var i=0;i<chboxs.length;i++) {
+            if(chboxs[i].checked){
+             vis = "block";
+             document.getElementById("password").required = true;
+             document.getElementById("confirm_pwd").required = true;
+                break;
+            } else {
+              document.getElementById("password").required = true;
+              document.getElementById("confirm_pwd").required = true;
+              break;
+            }
+        }
+        document.getElementById(box).style.display = vis;
+    }
+  </script>
   </body>
 </html>

@@ -11,4 +11,5 @@ urlpatterns = [
     url(r'^createAccount/$', views.createAccount, name='createAccount'),
     url(r'^logout/$', views.logoutView, name='logout'),
     url(r'^(?P<pk>[0-9]+)/$', views.DetailView.as_view(), name='detail'),
+    url(r'^(?P<pk>[0-9]+)/update/$', views.updateUser, name='update'),
     ]

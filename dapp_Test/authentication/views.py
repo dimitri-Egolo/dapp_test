@@ -32,7 +32,7 @@ def loginView(request):
     email = request.POST['email']
     pwd = request.POST['password']
     user = authenticate(email=email, password=pwd)
-    
+
     if user is not None:
         if user.is_active:
             login(request, user)
@@ -60,10 +60,11 @@ class DetailView(generic.DetailView):
 
 
 @login_required
-def updateUser(request, user_id):
-    user_to_update = get_object_or_404(UserProfile, pk=user_id)
+def updateUser(request, pk):
+    user_to_update = get_object_or_404(UserProfile, pk=pk)
+    print(request.POST)
     if user_to_update != request.user:
-        """i have to update this later. it must return a message saying that 
+        """i have to update this later. it must return a message saying that
         user does not have rights to do this operation.
         """
         return HttpResponseRedirect(reverse('home'))
@@ -73,7 +74,7 @@ def updateUser(request, user_id):
         user_to_update.username = request.POST['username']
         user_to_update.email = request.POST['email']
         user_to_update.photo = request.POST['photo']
-        
+        if request.POST['change_pwd'] == 'on':
+            user_to_update.set_password(request.POST['password'])
+        user_to_update.save()
         return HttpResponseRedirect(reverse('home'))
-    
-    

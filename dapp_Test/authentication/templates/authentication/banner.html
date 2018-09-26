@@ -1,18 +1,28 @@
 {% load static %}
-<div id="index-banner" class="parallax-container">
-  <div class="section no-pad-bot">
-    <div class="container">
-      <br><br>
-      <h1 class="header center teal-text text-lighten-2">Parallax Template</h1>
-      <div class="row center">
-        <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
-      </div>
-      <div class="row center">
-        <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Get Started</a>
-      </div>
-      <br><br>
-
-    </div>
+<div class="row">
+<div class="slider">
+    <ul class="slides">
+      <li>
+        <img src="{% static 'images/businessman1.jpg' %}" alt="Unsplashed background img 1">
+        <div class="caption center-align">
+          <h3>Make the world a better place </h3>
+          <h5 class="light grey-text text-lighten-3">with the blockchain.</h5>
+        </div>
+      </li>
+      <li>
+        <img src="{% static 'images/finger.jpg' %}" alt="Unsplashed background img 3">
+        <div class="caption right-align">
+          <h3>A secure and trustable technology</h3>
+          <h5 class="light grey-text text-lighten-3">insured by native cryptographic protocols</h5>
+        </div>
+      </li>
+      <li>
+        <img src="{% static 'images/hand3.jpg' %}" alt="Unsplashed background img 2">
+        <div class="caption left-align">
+          <h3>Decentralized Network</h3>
+          <h5 class="light grey-text text-lighten-3">the best implementation of your product.</h5>
+        </div>
+      </li>
+    </ul>
   </div>
-  <div class="parallax"><img src="{% static 'images/background1.jpg' %}" alt="Unsplashed background img 1"></div>
 </div>
