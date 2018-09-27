@@ -15,6 +15,10 @@ nav .brand-logo {
   top: 0px;
 }
 
+/* .login-body {
+  background-image: url();
+} */
+
 #updateBody nav {
   position: fixed;
   background-color: black;
