@@ -6,15 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Dapp Test</title>
 
-  {% include "authentication/stylesheet.html" %}
+  {% include "authentication/stylesheet.html" with color="black" %}
 </head>
-<body>
+<body id="updateBody">
   {% include 'authentication/header.html' %}
   <div class="container">
-    <div class="section">
+    <div class="section" style="padding-top: 120px;">
       <h2 class="center">Update profile</h2>
       <div class="divider"></div>
-      <form id="update_user" action="{% url 'auth:update' user.id %}" method="post">
+      <form id="update_user" enctype="multipart/form-data" action="{% url 'auth:update' user.id %}" method="post">
         {% csrf_token %}
         <div class="row" style="margin-bottom: 20px;">
           <blockquote>
@@ -42,7 +42,7 @@
           </div>
 
           <div class="file-field input-field col s12">
-            <div class="btn">
+            <div class="btn red lighten-1">
               <span>Photo</span>
               <input name="photo" form="update_user" type="file">
             </div>
@@ -75,7 +75,7 @@
 
         <div class="row" style="margin-top: 50px;">
           <div class="col s12">
-            <input id="edit" class="btn-large right waves-effect waves-light red lighten-2" type="submit" value="Edit your profile"/>
+            <input id="edit" class="btn-large right waves-effect waves-light red lighten-1" type="submit" value="Edit your profile"/>
             <a href="{% url 'home' %}" id="download-button" class="btn-large right waves-effect waves-light black">Cancel</a>
           </div>
         </div>

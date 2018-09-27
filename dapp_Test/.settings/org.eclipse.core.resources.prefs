@@ -1,5 +1,6 @@
 eclipse.preferences.version=1
 encoding//authentication/admin.py=utf-8
 encoding//authentication/models.py=utf-8
+encoding//authentication/tests.py=utf-8
 encoding//authentication/views.py=utf-8
 encoding//dapp_Test/views.py=utf-8

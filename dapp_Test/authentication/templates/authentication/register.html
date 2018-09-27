@@ -16,7 +16,7 @@
           <div class="col s12">
             <!-- card -->
             <div class="register-card card">
-              <form id="register_form" action="{% url 'auth:createAccount' %}" method="post">
+              <form id="register_form" enctype="multipart/form-data" action="{% url 'auth:createAccount' %}" method="post">
                 {% csrf_token %}
                 <div class="card-content">
                   <span class="card-title">Register</span>
@@ -53,7 +53,7 @@
                         <span id='message'></span>
                       </div>
                       <div class="file-field input-field col s12">
-                        <div class="btn">
+                        <div class="btn red lighten-1">
                           <span>Photo</span>
                           <input name="photo" form="register_form" type="file">
                         </div>

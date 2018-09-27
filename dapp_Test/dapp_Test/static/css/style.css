@@ -15,6 +15,13 @@ nav .brand-logo {
   top: 0px;
 }
 
+#updateBody nav {
+  position: fixed;
+  background-color: black;
+  color: white;
+  border: 0;
+}
+
 nav {
   position: fixed;
   background-color: transparent;
@@ -173,6 +180,72 @@ p {
     padding: 14px 16px;
 }
 
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  display: initial;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+.fa:hover {
+    /* opacity: 0.7; */
+    background-color: white;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-facebook:hover {
+  color: #3B5998;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-twitter:hover {
+  color: #55ACEE;
+}
+
+.fa-google {
+  background: #dd4b39;
+  color: white;
+}
+
+.fa-google:hover {
+  color: #dd4b39;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.fa-linkedin:hover {
+  color: #007bb5;
+}
+
+.icon-footer {
+  position: relative;
+  top: 5px;
+  margin-right: 5px;
+}
+
+.footer-line {
+  margin-left: 29px;
+}
+
+.slider .indicators .indicator-item.active {
+    background-color: #ef5350;
+}
 
 @media only screen and (max-width : 992px) {
   .parallax-container .section {

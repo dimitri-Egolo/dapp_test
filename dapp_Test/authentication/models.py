@@ -37,7 +37,7 @@ class UserProfile(AbstractUser):
 
     first_name = models.CharField(max_length=45, blank=False, null=False)
     last_name = models.CharField(max_length=45, blank=False, null=False)
-    photo = models.FileField(upload_to='uploads/')
+    photo = models.ImageField(upload_to='uploads/')
     tagline = models.CharField(max_length=140, blank=True)
 
     is_admin = models.BooleanField(default=False)

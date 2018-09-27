@@ -17,7 +17,13 @@
       <ul class="right hide-on-med-and-down navbar-nav">
         <li><a href="{% url 'home' %}"><i class="material-icons left">home</i>Home</a></li>
         <li>
-          <a class="dropdown-trigger" href="#!" data-target="dropdown1"><i class="material-icons left">account_circle</i>{{ user.username }}<i class="material-icons right">arrow_drop_down</i></a>
+          <a class="dropdown-trigger" data-target="dropdown1">
+            {% if user.photo.url != '' %}
+              <img src="{{ user.photo.url }}" class="responsive-img circle" style="width: 20px; height: 20px;" />
+            {% else %}
+              <i class="material-icons left">account_circle</i>
+            {% endif %}
+            {{ user.username }}<i class="material-icons right">arrow_drop_down</i></a>
         </li>
       </ul>
 

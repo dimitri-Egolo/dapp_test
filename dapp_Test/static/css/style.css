@@ -1,0 +1,226 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+nav ul a,
+nav .brand-logo {
+  color: #ef5350;
+}
+
+#index-banner{
+  top: 0px;
+}
+
+nav {
+  position: fixed;
+  background-color: transparent;
+  color: white;
+  border: 0;
+}
+
+.navbar {
+  height: 80px;
+  background-color: transparent;
+  border: 0;
+  color: white;
+  z-index: 100;
+  transition: background-color 1s ease 0s;
+}
+
+nav .nav-wrapper {
+    position: relative;
+    height: 100%;
+    padding-left: 40px;
+    padding-right: 40px;
+
+}
+
+nav .brand-logo {
+  color: white;
+}
+
+nav .brand-logo:hover{
+  color: #ef5350;
+  /* border: 1px solid #ef5350; */
+}
+
+nav .navbar-nav > li > a {
+  color: white;
+}
+
+nav .navbar-nav > li > a:hover {
+  color: #ef5350;
+  border-bottom: 1px solid #ef5350;
+}
+
+nav .navbar-nav > li > a:active {
+  color: #ef5350;
+  border-bottom: 1px solid #ef5350;
+}
+
+nav .navbar-nav > li > a:focus {
+  color: #ef5350;
+  border-bottom: 1px solid #ef5350;
+}
+
+/* nav .navbar-nav > li > a:visited {
+  color: white;
+  text-decoration: none;
+} */
+
+nav .navbar-nav > .active {
+
+  > a, > a:hover, > a:focus {
+    background-color: transparent;
+    color: #ef5350;
+  }
+}
+
+/* Solid class attached on scroll past first section */
+
+.navbar.solid {
+  background-color: black;
+  transition: background-color 1s ease 0s;
+  box-shadow: 0 0 4px grey;
+
+    .brand-logo {
+      color: #ef5350;
+      transition: color 1s ease 0s;
+    }
+
+    .navbar-nav {
+
+       > li {
+
+          > a {
+            color: #ef5350;
+            transition: color 1s ease 0s;
+          }
+
+       } //end li
+
+    } //end .navbar-nav
+
+}
+
+p {
+  line-height: 2rem;
+}
+
+.sidenav-trigger {
+  color: #ef5350;
+}
+
+.parallax-container {
+  min-height: 380px;
+  line-height: 0;
+  height: auto;
+  color: rgba(255,255,255,.9);
+}
+  .parallax-container .section {
+    width: 100%;
+  }
+
+/* login css */
+.login-card {
+  margin: 0 auto;
+  float: none;
+  margin-top: 60px;
+  max-width: 450px;
+}
+
+.login-input-row {
+  margin-bottom: 5px;
+}
+
+/* register css */
+.register-card {
+  margin: 0 auto;
+  float: none;
+  margin-top: 60px;
+  max-width: 700px;
+}
+
+.conditions-checkbox {
+  padding-left: 30px !important;
+}
+
+.dropdown-content {
+    background-color: #fff;
+    margin: 0;
+    margin-top: 64px;
+    display: none;
+    min-width: 150px;
+    overflow-y: auto;
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    top: 0 !important;
+    z-index: 9999;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+}
+
+.dropdown-content li > a, .dropdown-content li > span {
+    font-size: 16px;
+    color:black;
+    display: block;
+    line-height: 22px;
+    padding: 14px 16px;
+}
+
+
+@media only screen and (max-width : 992px) {
+  .parallax-container .section {
+    position: absolute;
+    top: 40%;
+  }
+  #index-banner .section {
+    top: 10%;
+  }
+
+  nav {
+    background-color: black;
+  }
+
+  .navbar{
+    height: 80px;
+    background-color: black;
+    border: 0;
+    color: white;
+    z-index: 100;
+    transition: background-color 1s ease 0s;
+  }
+
+  nav .nav-wrapper {
+      position: relative;
+      height: 100%;
+      padding-left: 0px;
+      padding-right: 0px;
+  }
+}
+
+.copyright {
+  border-top: 2px solid #ef5350;
+}
+
+@media only screen and (max-width : 600px) {
+  #index-banner .section {
+    top: 0;
+  }
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+  font-size: inherit;
+}
+
+footer.page-footer {
+  margin: 0;
+}
