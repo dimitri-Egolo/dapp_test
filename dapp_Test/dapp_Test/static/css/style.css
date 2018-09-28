@@ -26,6 +26,10 @@ nav .brand-logo {
   border: 0;
 }
 
+.section-title {
+  font-weight: lighter;
+}
+
 nav {
   position: fixed;
   background-color: transparent;
@@ -132,9 +136,45 @@ p {
   height: auto;
   color: rgba(255,255,255,.9);
 }
-  .parallax-container .section {
-    width: 100%;
-  }
+.parallax-container .section {
+  width: 100%;
+}
+
+/* our skills css */
+.clearfix:before,.clearfix:after {content: " "; display: table;}
+.clearfix:after {clear: both;}
+.clearfix {*zoom: 1;}
+
+.c100.skill-color .bar, .c100.skill-color .fill {
+  border-color: #f44336 !important;
+}
+.c100.skill-color:hover > span {
+  color: #f44336;
+}
+.c100.skill-color.dark .bar, .c100.skill-color.dark .fill {
+  border-color: #f44336 !important;
+}
+.c100.skill-color.dark:hover > span {
+  color: #f44336;
+}
+
+/* partners */
+.partners{
+  margin-top: 80px;
+}
+
+.partner-img {
+  -webkit-transition: width 2s; /* Safari */
+  transition: width 2s;
+}
+
+/* our services */
+.services-card {
+  color: black;
+}
+.services-list li {
+  margin:0 0 30px 0;
+}
 
 /* login css */
 .login-card {

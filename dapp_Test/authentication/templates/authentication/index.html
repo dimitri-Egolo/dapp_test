@@ -11,78 +11,141 @@
 <body>
   {% include 'authentication/header.html' %}
   {% include 'authentication/banner.html' %}
-  <div class="container">
+  <div id="whoweare" class="container">
     <div class="section">
-
+      <h2 class="center section-title">Who we are</h2>
       <!--   Icon Section   -->
       <div class="row">
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
-            <h5 class="center">Speeds up development</h5>
-
-            <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
-          </div>
-        </div>
-
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center brown-text"><i class="material-icons">group</i></h2>
-            <h5 class="center">User Experience Focused</h5>
-
-            <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
-          </div>
-        </div>
-
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
-            <h5 class="center">Easy to work with</h5>
-
-            <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
+        <div class="col s12">
+          <div class="icon-block center">
+            <h3 class="light center">Blockchain developers</h3>
+            <p class="center">Thanks to the blockchain, we give you more Transparency, Security, Traceability and efficiency.</p>
+            <p class="center">Let us know your project and goal.</p>
+            <a href="#footer" class="waves-effect waves-light btn center red lighten-1"><i class="material-icons left">email</i>Contact us</a>
           </div>
         </div>
       </div>
-
     </div>
   </div>
 
-
-  <div class="parallax-container valign-wrapper">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <div class="row center">
-          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
-        </div>
-      </div>
-    </div>
-    <div class="parallax"><img src="{% static 'images/background2.jpg' %}" alt="Unsplashed background img 2"></div>
-  </div>
-
-  <div class="container">
+  <div id="skills" class="container">
     <div class="section">
-
+      <h2 class="center section-title">Our Skills</h2>
+      <p class="center"><i>what we do</i></p>
       <div class="row">
-        <div class="col s12 center">
-          <h3><i class="mdi-content-send brown-text"></i></h3>
-          <h4>Contact Us</h4>
-          <p class="left-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi massa odio, condimentum sed ipsum ac, gravida ultrices erat. Nullam eget dignissim mauris, non tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
+        <div class="col s6 l3">
+          <div class="clearfix">
+              <div class="c100 p70 skill-color">
+                  <span>90%</span>
+                  <div class="slice">
+                      <div class="bar"></div>
+                      <div class="fill"></div>
+                  </div>
+              </div>
+          </div>
+          <h5><i>ethereum</i></h5>
+        </div>
+
+        <div class="col s6 l3">
+          <div class="clearfix">
+              <div class="c100 p70 skill-color">
+                  <span>70%</span>
+                  <div class="slice">
+                      <div class="bar"></div>
+                      <div class="fill"></div>
+                  </div>
+              </div>
+          </div>
+          <h5><i>front end</i></h5>
+        </div>
+
+        <div class="col s6 l3">
+          <div class="clearfix">
+              <div class="c100 p70 skill-color">
+                  <span>80%</span>
+                  <div class="slice">
+                      <div class="bar"></div>
+                      <div class="fill"></div>
+                  </div>
+              </div>
+          </div>
+          <h5><i>backend</i></h5>
+        </div>
+
+        <div class="col s6 l3">
+          <div class="clearfix">
+              <div class="c100 p70 skill-color">
+                  <span>75%</span>
+                  <div class="slice">
+                      <div class="bar"></div>
+                      <div class="fill"></div>
+                  </div>
+              </div>
+          </div>
+          <h5><i>production</i></h5>
         </div>
       </div>
 
     </div>
   </div>
 
+<div id="services" class="container">
+  <div class="section">
+    <h2 class="center section-title">Our services</h2>
+    <p class="center"><i>what we offer</i></p>
 
-  <div class="parallax-container valign-wrapper">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <div class="row center">
-          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+  </div>
+</div>
+<div class="section" style="background-image: url('{% static "images/blockchain.png"%}')">
+  <div class="container">
+    <div class="row">
+      <div class="col s12 l6">
+        <div class="card">
+          <div class="card-content services-card">
+            <h6 class="card-title center"><u>Our Products</u></h6>
+            <ul class="services-list">
+              <li>Ethereum, Corda and Hyperledger network</li>
+              <li>Decentralized Ethereum Apps</li>
+              <li>Web apps</li>
+              <li>API creation</li>
+              <li>PSD2</li>
+              <li>WebServices</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col s12 l6">
+        <div class="card">
+          <div class="card-content services-card">
+            <h6 class="card-title center"><u>Technology</u></h6>
+            <ul class="services-list">
+              <li>Javascript</li>
+              <li>web3</li>
+              <li>Solidity</li>
+              <li>Html/css</li>
+              <li>REST/SOAP</li>
+              <li>Wordpress/Bootstrap</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
-    <div class="parallax"><img src="{% static 'images/background3.jpg' %}" alt="Unsplashed background img 3"></div>
+  </div>
+</div>
+
+  <div id="partners" class="container">
+    <div class="section">
+      <h2 class="center section-title">They trusted us</h2>
+      <div class="row partners">
+        <div class="col s12 l6 center">
+          <img class="right partner-img" src="{% static 'images/travelex.jpg' %}" style="width: 50%;" alt="Travelex logo">
+        </div>
+        <div class="col s12 l6">
+          <img class="partner-img" src="{% static 'images/ditto.jpg' %}" style="width: 50%;" alt="Ditto bank">
+        </div>
+      </div>
+
+    </div>
   </div>
 
   {% include 'authentication/footer.html' %}
