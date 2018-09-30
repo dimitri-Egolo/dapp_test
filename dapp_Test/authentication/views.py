@@ -26,7 +26,7 @@ def createAccount(request):
                                                 username=request.POST['username'],
                                                 email=request.POST['email'],
                                                 password=request.POST['password'])
-        if request.FILES['photo']:
+        if 'photo' in request.FILES:
             photo = request.FILES['photo']
             fs = FileSystemStorage()
             filename = fs.save(photo.name, photo)
